@@ -1,8 +1,7 @@
-// src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Bars3Icon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 
-export const Navbar = () => {
+export const Navbar = ({ onReservationClick }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -27,9 +26,9 @@ export const Navbar = () => {
               </a>
             </li>
             <li className="py-2 border-b w-full text-center">
-              <a href="#reservation" onClick={toggleMenu}>
+              <button onClick={() => { toggleMenu(); onReservationClick(); }}>
                 Reservation
-              </a>
+              </button>
             </li>
             <li className="py-2 w-full text-center">
               <a href="#footer" onClick={toggleMenu}>
@@ -44,3 +43,4 @@ export const Navbar = () => {
 };
 
 export default Navbar;
+

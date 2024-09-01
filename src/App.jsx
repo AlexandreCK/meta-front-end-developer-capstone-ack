@@ -1,22 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Reservation from './components/Reservation';
 import Footer from './components/Footer';
 
 function App() {
+  const [showReservation, setShowReservation] = useState(false);
+
+  const toggleReservation = () => {
+    setShowReservation(!showReservation);
+  };
+
   return (
     <>
-      <Navbar />
-      <section id="header">
-        <Header />
-      </section>
-      <section id="reservation">
-        <Reservation />
-      </section>
-      <section id="footer">
-        <Footer />
-      </section>
+      <Navbar onReservationClick={toggleReservation} />
+      <Header onReserveClick={toggleReservation} />
+      {showReservation && (
+        <section id="reservation">
+          <Reservation />
+        </section>
+      )}
+      <Footer />
     </>
   );
 }
