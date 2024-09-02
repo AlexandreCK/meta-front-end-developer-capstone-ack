@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Reservation from './components/Reservation';
 import Footer from './components/Footer';
-import Carousel from './components/Carousel'; // Import Carousel
+import Carousel from './components/Carousel';
 
 function App() {
   const [showReservation, setShowReservation] = useState(false);
@@ -13,23 +13,23 @@ function App() {
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-customGreen">
       <Navbar onReservationClick={toggleReservation} />
       <Header onReserveClick={toggleReservation} />
-      {!showReservation && (
-        <div className="relative">
-          <Carousel /> {/* Render Carousel */}
-        </div>
-      )}
-      {showReservation && (
-        <section id="reservation">
-          <Reservation />
-        </section>
-      )}
+      <main className="flex-grow bg-customGreen">
+        {!showReservation ? (
+          <Carousel />
+        ) : (
+          <section id="reservation">
+            <Reservation />
+          </section>
+        )}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
 export default App;
+
 
