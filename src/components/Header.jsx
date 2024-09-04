@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import React from 'react';
 
 const Header = ({ onReserveClick }) => {
@@ -11,19 +12,16 @@ const Header = ({ onReserveClick }) => {
       </p>
 
       {/* Button */}
-      <button
-        onClick={() => {
-          console.log('Reserve button clicked');
-          onReserveClick();
-        }}
-        className="bg-customYellow text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 font-karla"
-      >
-        Reserve a Table
-      </button>
+      {onReserveClick && (
+        <button
+          onClick={onReserveClick}
+          className="bg-customYellow text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 font-karla"
+        >
+          Reserve a Table
+        </button>
+      )}
     </header>
   );
 };
 
 export default Header;
-
-

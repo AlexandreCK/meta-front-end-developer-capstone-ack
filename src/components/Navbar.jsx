@@ -1,7 +1,8 @@
+// src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Bars3Icon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 
-export const Navbar = ({ onReservationClick }) => {
+export const Navbar = ({ onPageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,19 +22,19 @@ export const Navbar = ({ onReservationClick }) => {
         <div className="absolute top-16 left-0 w-full bg-white shadow-lg">
           <ul className="flex flex-col items-center">
             <li className="py-2 border-b w-full text-center">
-              <a href="#header" onClick={toggleMenu}>
-                Header
-              </a>
+              <button onClick={() => { setIsOpen(false); onPageChange("home"); }}>
+                Home
+              </button>
             </li>
             <li className="py-2 border-b w-full text-center">
-              <button onClick={() => { toggleMenu(); onReservationClick(); }}>
+              <button onClick={() => { setIsOpen(false); onPageChange("reservation"); }}>
                 Reservation
               </button>
             </li>
-            <li className="py-2 w-full text-center">
-              <a href="#footer" onClick={toggleMenu}>
-                Footer
-              </a>
+            <li className="py-2 border-b w-full text-center">
+              <button onClick={() => { setIsOpen(false); onPageChange("menu"); }}>
+                Menu
+              </button>
             </li>
           </ul>
         </div>
@@ -43,4 +44,3 @@ export const Navbar = ({ onReservationClick }) => {
 };
 
 export default Navbar;
-
