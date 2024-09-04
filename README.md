@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The capstone for the META Professional Front-End Certification. It is designed to showcase the skills and knowledge acquired throughout the course, focusing on building a responsive and functional web application. The project includes key features such as a reservation system, a dynamic menu, and a user-friendly interface designed with Tailwind CSS, JS, and React.
+This project serves as the capstone for the META Professional Front-End Certification, demonstrating the skills and knowledge acquired throughout the course. The challenge presented was to create a fully responsive and functional web application for the fictional Little Lemon restaurant. The application includes key features such as an intuitive reservation system, a dynamic menu, and a user-friendly interface, all designed using React, Vite, and Tailwind CSS. The goal was to provide a seamless user experience that meets the needs of a modern restaurant business.
 
 ## Features
 
@@ -27,7 +27,7 @@ The capstone for the META Professional Front-End Certification. It is designed t
 1. Clone the repository:
    
    ```sh
-   git clone https://github.com/meta-front-end-developer-capstone-ack
+   git clone https://github.com/AlexandreCK/meta-front-end-developer-capstone-ack
    cd meta-front-end-developer-capstone-ack
 
 3. Install dependencies:
@@ -67,36 +67,37 @@ The capstone for the META Professional Front-End Certification. It is designed t
 
    ```sh
 /meta-front-end-developer-capstone-ack
-   /additional-docs        # Relevant documents provided for certain features
-   /node_modules           # Project dependencies
-   /public                 # Public assets
-   /src                    # Source files
-     /assets               # Static assets like images and styles
-     /components           # React components
-       About.jsx
-       CallToAction.jsx
-       Carousel.jsx
-       Confirmation.jsx
-       Footer.jsx
-       Header.jsx
-       Menu.jsx
-       MenuCard.jsx
-       Navbar.jsx
-       Reservation.jsx
-   api.js                  # Mock API for the booking functionality
-   App.jsx                 # Main application component
-   index.css               # Global styles
-   main.jsx                # Entry point for the React application
- .eslint.config.js         # ESLint configuration
- .gitattributes            # Git attributes file
- .gitignore                # Git ignore file
- index.html                # Main HTML file
- package-lock.json         # NPM lock file
- package.json              # NPM configuration file
- README.md                 # Project README file
- postcss.config.js         # Post CSS configuration file
- tailwind.config.js        # Tailwind CSS configuration file
- vite.config.js            # Vite configuration file
+    /additional_docs        # Relevant documents provided for certain features
+    /node_modules           # Project dependencies
+    /public                 # Public assets
+    /src                    # Source files
+        /assets               # Static assets like images and styles
+        /components           # React components
+        About.jsx
+        CallToAction.jsx
+        Carousel.jsx
+        Confirmation.jsx
+        Footer.jsx
+        Header.jsx
+        Menu.jsx
+        MenuCard.jsx
+        Navbar.jsx
+        Reservation.jsx
+    api.js                  # Mock API for the booking functionality
+    App.jsx                 # Main application component
+    index.css               # Global styles
+    main.jsx                # Entry point for the React application
+    .eslint.config.js         # ESLint configuration
+    .gitattributes            # Git attributes file
+    .gitignore                # Git ignore file
+    index.html                # Main HTML file
+    package-lock.json         # NPM lock file
+    package.json              # NPM configuration file
+    LICENSE                   # License of the project
+    README.md                 # Project README file
+    postcss.config.js         # Post CSS configuration file
+    tailwind.config.js        # Tailwind CSS configuration file
+    vite.config.js            # Vite configuration file
    ```
 
 # License
