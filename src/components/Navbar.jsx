@@ -1,6 +1,6 @@
-// src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Bars3Icon, ShoppingCartIcon } from "@heroicons/react/24/outline";
+import logo from "../assets/logo.webp"; // Path to the logo
 
 export const Navbar = ({ onPageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,31 +9,67 @@ export const Navbar = ({ onPageChange }) => {
     setIsOpen(!isOpen);
   };
 
+  const handleNavigation = (page) => {
+    setIsOpen(false);
+    onPageChange(page);
+  };
+
   return (
-    <nav className="bg-white shadow-md p-4 flex justify-between items-center relative">
-      <button onClick={toggleMenu} className="focus:outline-none">
+    <nav className="bg-white shadow-md p-4 flex items-center justify-between relative border-b border-gray-200">
+      <button
+        onClick={toggleMenu}
+        className="p-2 rounded-full hover:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
+      >
         <Bars3Icon className="h-8 w-8 text-gray-800" />
       </button>
-      <div>
+
+      <img
+        src={logo}
+        alt="Logo"
+        className="h-12 cursor-pointer"
+        onClick={() => handleNavigation("home")} // Navigate to home page
+      />
+
+      <button
+        className="p-2 rounded-full hover:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
+      >
         <ShoppingCartIcon className="h-8 w-8 text-gray-800" />
-      </div>
+      </button>
 
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-lg">
+        <div className="absolute top-16 left-0 w-full bg-white shadow-lg rounded-lg border border-gray-200">
           <ul className="flex flex-col items-center">
             <li className="py-2 border-b w-full text-center">
-              <button onClick={() => { setIsOpen(false); onPageChange("home"); }}>
+              <button
+                onClick={() => handleNavigation("home")}
+                className="w-full py-2 hover:bg-gray-100 transition duration-150 ease-in-out"
+              >
                 Home
               </button>
             </li>
             <li className="py-2 border-b w-full text-center">
-              <button onClick={() => { setIsOpen(false); onPageChange("reservation"); }}>
+              <button
+                onClick={() => handleNavigation("reservation")}
+                className="w-full py-2 hover:bg-gray-100 transition duration-150 ease-in-out"
+              >
                 Reservation
               </button>
             </li>
             <li className="py-2 border-b w-full text-center">
-              <button onClick={() => { setIsOpen(false); onPageChange("menu"); }}>
+              <button
+                onClick={() => handleNavigation("menu")}
+                className="w-full py-2 hover:bg-gray-100 transition duration-150 ease-in-out"
+              >
                 Menu
+              </button>
+            </li>
+            <li className="py-2 w-full text-center">
+              <button
+                onClick={() => handleNavigation("about")}
+                className="w-full py-2 hover
+                hover:bg-gray-100 transition duration-150 ease-in-out"
+              >
+                About
               </button>
             </li>
           </ul>
@@ -44,3 +80,4 @@ export const Navbar = ({ onPageChange }) => {
 };
 
 export default Navbar;
+

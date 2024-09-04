@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -6,6 +5,7 @@ import Reservation from './components/Reservation';
 import Footer from './components/Footer';
 import Carousel from './components/Carousel';
 import Menu from './components/Menu';
+import About from './components/About'; // Import the About component
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -37,9 +37,16 @@ function App() {
       )}
       {currentPage === "menu" && (
         <>
-          <Header onReserveClick={() => handlePageChange("reservation")} /> {/* this line */}
+          <Header onReserveClick={() => handlePageChange("reservation")} />
           <section id="menu">
             <Menu />
+          </section>
+        </>
+      )}
+      {currentPage === "about" && (
+        <>
+          <section id="about">
+            <About />
           </section>
         </>
       )}
@@ -50,3 +57,4 @@ function App() {
 }
 
 export default App;
+
