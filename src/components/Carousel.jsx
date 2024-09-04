@@ -29,6 +29,19 @@ const Carousel = () => {
     ),
   };
 
+  const getTextStyle = (index) => {
+    switch (index) {
+      case 0:
+        return "text-4xl font-playfair";
+      case 1:
+        return "text-5xl font-montserrat";
+      case 2:
+        return "text-3xl font-roboto";
+      default:
+        return "text-4xl font-playfair";
+    }
+  };
+
   return (
     <div className="relative max-w-4xl mx-auto my-8">
       {mounted && (
@@ -40,8 +53,10 @@ const Carousel = () => {
                 alt={`Slide ${index + 1}`}
                 className="w-full h-auto object-cover rounded-lg shadow-lg"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 rounded-lg">
-                <p className="text-white text-xl font-bold">Discover Our Flavor</p>
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 rounded-lg p-4">
+                <p className={`text-white ${getTextStyle(index)}`}>
+                  Discover Our Flavor
+                </p>
               </div>
             </div>
           ))}
@@ -52,6 +67,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
-
-

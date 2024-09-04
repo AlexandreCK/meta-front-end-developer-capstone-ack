@@ -24,7 +24,7 @@ const About = () => {
 
       <main className="container mx-auto px-4 py-8">
         <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Our Story</h2>
+          <h2 className="text-3xl font-bold mb-4 text-customYellow">Our Story</h2>
           <p className="text-lg mb-6">
             Founded with a passion for Mediterranean cuisine, we aim to offer an
             unforgettable dining experience with a blend of traditional and
@@ -39,7 +39,7 @@ const About = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured Dishes</h2>
+          <h2 className="text-3xl font-bold mb-4 text-customYellow">Featured Dishes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <img
               src={baba}

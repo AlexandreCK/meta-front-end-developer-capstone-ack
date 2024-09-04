@@ -1,8 +1,6 @@
-// src/components/MenuCard.jsx
 import React from 'react';
 import { StarIcon, FireIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
 
-// Function to render spice level icons
 const SpiceLevel = ({ level }) => {
   const icons = [];
   for (let i = 0; i < level; i++) {
@@ -32,4 +30,3 @@ const MenuCard = ({ dish }) => {
 };
 
 export default MenuCard;
-

@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         markazi: ['"Markazi Text"', 'serif'],
         karla: ['Karla', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       colors: {
         customGreen: '#495E57',
@@ -18,9 +21,3 @@ module.exports = {
   },
   plugins: [],
 }
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Bars3Icon, ShoppingCartIcon } from "@heroicons/react/24/outline";
-import logo from "../assets/logo.webp"; // Path to the logo
+import logo from "../assets/logo.webp";
 
 export const Navbar = ({ onPageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ export const Navbar = ({ onPageChange }) => {
         src={logo}
         alt="Logo"
         className="h-12 cursor-pointer"
-        onClick={() => handleNavigation("home")} // Navigate to home page
+        onClick={() => handleNavigation("home")}
       />
 
       <button
@@ -49,18 +49,18 @@ export const Navbar = ({ onPageChange }) => {
             </li>
             <li className="py-2 border-b w-full text-center">
               <button
-                onClick={() => handleNavigation("reservation")}
-                className="w-full py-2 hover:bg-gray-100 transition duration-150 ease-in-out"
-              >
-                Reservation
-              </button>
-            </li>
-            <li className="py-2 border-b w-full text-center">
-              <button
                 onClick={() => handleNavigation("menu")}
                 className="w-full py-2 hover:bg-gray-100 transition duration-150 ease-in-out"
               >
                 Menu
+              </button>
+            </li>
+            <li className="py-2 border-b w-full text-center">
+              <button
+                onClick={() => handleNavigation("reservation")}
+                className="w-full py-2 hover:bg-gray-100 transition duration-150 ease-in-out"
+              >
+                Reservation
               </button>
             </li>
             <li className="py-2 w-full text-center">
@@ -80,4 +80,3 @@ export const Navbar = ({ onPageChange }) => {
 };
 
 export default Navbar;
-

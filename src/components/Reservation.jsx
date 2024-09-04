@@ -89,151 +89,152 @@ const Reservation = () => {
   };
 
   return (
-    <div>
-      {showConfirmation ? (
-        <Confirmation
-          reservationData={confirmationData}
-          onClose={handleCloseConfirmation}
-        />
-      ) : (
-        <div className="bg-customGreen p-8 rounded-lg shadow-lg max-w-md mx-auto">
-          <h2 className="text-2xl font-bold mb-6 text-customYellow font-markazi text-center" id="reservation-header">
-            Reserve a Table
-          </h2>
-          <form onSubmit={handleSubmit} className="space-y-4" aria-labelledby="reservation-header">
-            <div>
-              <label htmlFor="seating" className="block text-white font-semibold mb-2 font-karla">
-                Seating Options
-              </label>
-              <select
-                id="seating"
-                name="seating"
-                value={formData.seating}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-lg bg-gray-100 text-gray-700 font-karla"
-                required
-                aria-required="true"
-              >
-                <option value="" disabled>Select seating option</option>
-                <option value="indoor">Indoors</option>
-                <option value="outdoor">Outdoors</option>
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="comments" className="block text-white font-semibold mb-2 font-karla">
-                Additional Comments
-              </label>
-              <textarea
-                id="comments"
-                name="comments"
-                value={formData.comments}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-lg bg-gray-100 text-gray-700 font-karla"
-                placeholder="Any special requests?"
-                rows="4"
-                aria-describedby="comments-desc"
-              />
-              <p id="comments-desc" className="sr-only">Provide any additional comments or special requests here.</p>
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-white font-semibold mb-2 font-karla">
-                Confirmation Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-lg bg-gray-100 text-gray-700 font-karla"
-                placeholder="Enter your email"
-                required
-                aria-required="true"
-                aria-describedby="email-desc"
-              />
-              <p id="email-desc" className="sr-only">Enter a valid email address to receive confirmation.</p>
-            </div>
-
-            <div>
-              <label htmlFor="date" className="block text-white font-semibold mb-2 font-karla">
-                Date
-              </label>
-              <input
-                id="date"
-                type="date"
-                name="date"
-                value={formData.date}
-                onChange={(e) => {
-                  handleChange(e);
-                  setFormData((prev) => ({ ...prev, time: "" }));
-                }}
-                className="w-full px-4 py-2 border rounded-lg bg-gray-100 text-gray-700 font-karla"
-                required
-                aria-required="true"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="time" className="block text-white font-semibold mb-2 font-karla">
-                Time
-              </label>
-              <select
-                id="time"
-                name="time"
-                value={formData.time}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-lg bg-gray-100 text-gray-700 font-karla"
-                disabled={!formData.date}
-                required
-                aria-required="true"
-                aria-describedby="time-desc"
-              >
-                <option value="" disabled>Select time</option>
-                {formData.date && getAvailableTimes(formData.date).length > 0 ? (
-                  getAvailableTimes(formData.date).map((time, index) => (
-                    <option key={index} value={time}>
-                      {time}
-                    </option>
-                  ))
-                ) : (
-                  <option value="" disabled>No available times</option>
-                )}
-              </select>
-              <p id="time-desc" className="sr-only">Select a time slot for your reservation.</p>
-            </div>
-
-            <div>
-              <label htmlFor="diners" className="block text-white font-semibold mb-2 font-karla">
-                Number of Diners
-              </label>
-              <input
-                id="diners"
-                type="number"
-                name="diners"
-                value={formData.diners}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-lg bg-gray-100 text-gray-700 font-karla"
-                placeholder="Enter number of diners"
-                required
-                min="1"
-                aria-required="true"
-                aria-describedby="diners-desc"
-              />
-              <p id="diners-desc" className="sr-only">Enter the number of diners. Must be at least 1.</p>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-customYellow text-black py-2 rounded-lg font-bold hover:bg-yellow-400 transition duration-300 font-karla"
-            >
-              Confirm Reservation
-            </button>
-          </form>
+<div>
+  {showConfirmation ? (
+    <Confirmation
+      reservationData={confirmationData}
+      onClose={handleCloseConfirmation}
+    />
+  ) : (
+    <div className="bg-white p-8 rounded-lg shadow-xl max-w-md mx-auto">
+      <h2 className="text-3xl font-extrabold mb-6 text-customGreen font-montserrat text-center" id="reservation-header">
+        Reserve a Table
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-6" aria-labelledby="reservation-header">
+        <div>
+          <label htmlFor="seating" className="block text-gray-800 font-semibold mb-2 font-roboto">
+            Seating Options
+          </label>
+          <select
+            id="seating"
+            name="seating"
+            value={formData.seating}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900 font-roboto"
+            required
+            aria-required="true"
+          >
+            <option value="" disabled>Select seating option</option>
+            <option value="indoor">Indoors</option>
+            <option value="outdoor">Outdoors</option>
+          </select>
         </div>
-      )}
+
+        <div>
+          <label htmlFor="comments" className="block text-gray-800 font-semibold mb-2 font-roboto">
+            Additional Comments
+          </label>
+          <textarea
+            id="comments"
+            name="comments"
+            value={formData.comments}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900 font-roboto"
+            placeholder="Any special requests?"
+            rows="4"
+            aria-describedby="comments-desc"
+          />
+          <p id="comments-desc" className="sr-only">Provide any additional comments or special requests here.</p>
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-gray-800 font-semibold mb-2 font-roboto">
+            Confirmation Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900 font-roboto"
+            placeholder="Enter your email"
+            required
+            aria-required="true"
+            aria-describedby="email-desc"
+          />
+          <p id="email-desc" className="sr-only">Enter a valid email address to receive confirmation.</p>
+        </div>
+
+        <div>
+          <label htmlFor="date" className="block text-gray-800 font-semibold mb-2 font-roboto">
+            Date
+          </label>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={(e) => {
+              handleChange(e);
+              setFormData((prev) => ({ ...prev, time: "" }));
+            }}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900 font-roboto"
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="time" className="block text-gray-800 font-semibold mb-2 font-roboto">
+            Time
+          </label>
+          <select
+            id="time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900 font-roboto"
+            disabled={!formData.date}
+            required
+            aria-required="true"
+            aria-describedby="time-desc"
+          >
+            <option value="" disabled>Select time</option>
+            {formData.date && getAvailableTimes(formData.date).length > 0 ? (
+              getAvailableTimes(formData.date).map((time, index) => (
+                <option key={index} value={time}>
+                  {time}
+                </option>
+              ))
+            ) : (
+              <option value="" disabled>No available times</option>
+            )}
+          </select>
+          <p id="time-desc" className="sr-only">Select a time slot for your reservation.</p>
+        </div>
+
+        <div>
+          <label htmlFor="diners" className="block text-gray-800 font-semibold mb-2 font-roboto">
+            Number of Diners
+          </label>
+          <input
+            id="diners"
+            type="number"
+            name="diners"
+            value={formData.diners}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900 font-roboto"
+            placeholder="Enter number of diners"
+            required
+            min="1"
+            aria-required="true"
+            aria-describedby="diners-desc"
+          />
+          <p id="diners-desc" className="sr-only">Enter the number of diners. Must be at least 1.</p>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-customYellow text-black py-3 rounded-lg font-bold hover:bg-yellow-500 transition duration-300 font-roboto"
+        >
+          Confirm Reservation
+        </button>
+      </form>
     </div>
+  )}
+</div>
+
   );
 };
 

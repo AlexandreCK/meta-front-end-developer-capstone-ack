@@ -1,9 +1,6 @@
-// src/components/Menu.jsx
 import React from 'react';
 import MenuCard from './MenuCard';
-import image1 from "../assets/1.webp";
 import image2 from "../assets/2.webp";
-import image3 from "../assets/3.webp";
 import baba from "../assets/baba.jpg";
 import dolmas from "../assets/dolmas.jpg";
 import lamb from "../assets/lamb.jpg";
@@ -25,7 +22,6 @@ const menuItems = [
     { id: 9, name: "Paella Valenciana", description: "A traditional Spanish rice dish with saffron, chicken, rabbit, and vegetables.", image: paella, spiceLevel: 2, price: "$18.99" },
   ];
   
-
 const Menu = () => {
   return (
     <div className="bg-customGreen min-h-screen">
@@ -42,4 +38,3 @@ const Menu = () => {
 };
 
 export default Menu;
-
