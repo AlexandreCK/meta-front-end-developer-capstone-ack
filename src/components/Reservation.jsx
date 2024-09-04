@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { toast } from 'react-toastify';
 import Confirmation from "./Confirmation";
-import { fetchAPI, submitAPI } from "../api"; // Importing the API functions
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +12,6 @@ const Reservation = () => {
     diners: "",
   });
 
-  const [availableTimes, setAvailableTimes] = useState([]);
   const [reservedTimes, setReservedTimes] = useState({
     "2024-09-02": ["16:00"],
   });
@@ -20,13 +19,7 @@ const Reservation = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [confirmationData, setConfirmationData] = useState(null);
 
-  // Fetch available times when the date changes
-  useEffect(() => {
-    if (formData.date) {
-      const times = fetchAPI(new Date(formData.date));
-      setAvailableTimes(times);
-    }
-  }, [formData.date]);
+  useEffect(() => {}, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -40,7 +33,15 @@ const Reservation = () => {
 
     const { date, time } = formData;
     if (date && time && reservedTimes[date]?.includes(time)) {
-      alert("Selected time is not available. Please choose a different time.");
+      toast.error("Selected time is not available. Please choose a different time.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return;
     }
 
@@ -64,6 +65,23 @@ const Reservation = () => {
       time: "",
       diners: "",
     });
+  };
+
+  const getAvailableTimes = (date) => {
+    const possibleTimes = [
+      "12:00",
+      "13:00",
+      "14:00",
+      "15:00",
+      "16:00",
+      "17:00",
+      "18:00",
+      "19:00",
+      "20:00",
+      "21:00",
+    ];
+    const reserved = reservedTimes[date] || [];
+    return possibleTimes.filter((time) => !reserved.includes(time));
   };
 
   const handleCloseConfirmation = () => {
@@ -163,8 +181,9 @@ const Reservation = () => {
                 <option value="" disabled>
                   Select time
                 </option>
-                {availableTimes.length > 0 ? (
-                  availableTimes.map((time, index) => (
+                {formData.date &&
+                getAvailableTimes(formData.date).length > 0 ? (
+                  getAvailableTimes(formData.date).map((time, index) => (
                     <option key={index} value={time}>
                       {time}
                     </option>

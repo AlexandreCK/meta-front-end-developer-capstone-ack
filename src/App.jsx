@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Reservation from './components/Reservation';
 import Footer from './components/Footer';
 import Carousel from './components/Carousel';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [showReservation, setShowReservation] = useState(false);
@@ -26,6 +28,7 @@ function App() {
         )}
       </main>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
