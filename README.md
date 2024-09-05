@@ -1,5 +1,25 @@
 # META Professional Front-End Certification Capstone Project
 
+## Table of Contents
+
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Preview](#preview)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Running The Project](#running-the-project)
+  - [Usage](#usage)
+    - [Homepage](#homepage)
+    - [Reservation System](#reservation-system)
+    - [Menu](#menu)
+  - [Project Structure](#project-structure)
+  - [License](#license)
+    - [Code License](#code-license)
+    - [Assets License](#assets-license)
+  - [Contact](#contact)
+
+
 ## Introduction
 
 This project serves as the capstone for the META Professional Front-End Certification, demonstrating the skills and knowledge acquired throughout the course. The challenge presented was to create a fully responsive and functional web application for the fictional Little Lemon restaurant. The application includes key features such as an intuitive reservation system, a dynamic menu, and a user-friendly interface, all designed using React, Vite, and Tailwind CSS. The goal was to provide a seamless user experience that meets the needs of a modern restaurant business.
