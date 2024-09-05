@@ -13,6 +13,13 @@ This project serves as the capstone for the META Professional Front-End Certific
 - **Call to Action**: A prominent call-to-action button encourages users to explore the menu, enhancing user engagement.
 - **Accessibility Features**: The application is designed with accessibility in mind, ensuring that it is usable by a wide range of users.
 
+## Preview
+
+| ![Screenshot 1](https://github.com/user-attachments/assets/dedc3556-aec3-4c88-9a7e-9cd29c2299e7) | ![Screenshot 2](https://github.com/user-attachments/assets/2ce4c4fb-3f92-44d4-acbb-03f4726bf4c7) |
+| :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
+| ![Screenshot 3](https://github.com/user-attachments/assets/5c8ad945-98de-45d6-8960-97f9ed1644f8) | ![Screenshot 4](https://github.com/user-attachments/assets/7461d0c4-ca0d-4374-8d29-0f534e54b41f) |
+| ![Screenshot 5](https://github.com/user-attachments/assets/076e3a1a-17ec-442f-92e8-360a49012bf1) | |
+
 ## Getting Started
 
 ### Prerequisites
